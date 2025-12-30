@@ -1,110 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luntian Social | The Green Network</title>
-    <link rel="icon" type="image/png" href="images/lwowhite.png">
-    <link rel="shortcut icon" href="images/lwowhite.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
-    <meta name="theme-color" content="#064e3b">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Load Mini Player Logic -->
-    <script src="js/mini-player.js" defer></script>
-
-    <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #020617; color: #e2e8f0; overflow-x: hidden; }
-        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glass-card { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(52, 211, 153, 0.1); transition: all 0.3s ease; }
-        .glass-card:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 0 20px rgba(52, 211, 153, 0.1); transform: translateY(-2px); }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #020617; }
-        ::-webkit-scrollbar-thumb { background: #059669; border-radius: 10px; }
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=/social">
+  <link rel="canonical" href="/social">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
 </head>
-<body class="bg-[url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2594&q=80')] bg-fixed bg-cover bg-center">
-    
-    <div class="fixed inset-0 bg-slate-950/80 z-0"></div>
-
-    <div class="relative z-10 flex h-screen overflow-hidden max-w-[1600px] mx-auto">
-        <!-- SIDEBAR -->
-        <aside class="w-20 lg:w-64 hidden md:flex flex-col py-6 px-4 glass-panel border-r border-white/5 z-20">
-            <div class="flex items-center gap-3 mb-10 pl-2">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.6)]">
-                    <img src="images/logo.png" onerror="this.src='https://placehold.co/40x40'" class="h-6 w-auto brightness-200">
-                </div>
-                <h1 class="hidden lg:block font-black text-xl tracking-wider text-white">LUNTIAN<span class="text-emerald-400">.NET</span></h1>
-            </div>
-
-            <nav class="space-y-2 flex-1">
-                <a href="/" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
-                    <i class="fas fa-globe-asia text-xl group-hover:scale-110 transition"></i>
-                    <span class="hidden lg:block font-bold">Main Website</span>
-                </a>
-                <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                    <i class="fas fa-stream text-xl"></i>
-                    <span class="hidden lg:block font-bold">Live Feed</span>
-                </a>
-                <a href="/activities" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
-                    <i class="fas fa-users text-xl group-hover:scale-110 transition"></i>
-                    <span class="hidden lg:block font-bold">Community</span>
-                </a>
-                <a href="/music" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
-                    <i class="fas fa-music text-xl group-hover:scale-110 transition"></i>
-                    <span class="hidden lg:block font-bold">Vibe Player</span>
-                </a>
-            </nav>
-        </aside>
-
-        <!-- FEED -->
-        <main class="flex-1 overflow-y-auto relative no-scrollbar">
-            <!-- Mobile Header -->
-            <div class="md:hidden glass-panel sticky top-0 z-50 px-4 py-3 flex justify-between items-center mb-4">
-                <img src="images/logo.png" class="h-8 w-auto">
-                <a href="/" class="text-emerald-400 font-bold">EXIT APP</a>
-            </div>
-
-            <div class="max-w-2xl mx-auto py-8 px-4 pb-32">
-                <!-- Create Post -->
-                <div class="glass-panel rounded-2xl p-4 mb-8 flex gap-4 items-start">
-                    <div class="w-10 h-10 rounded-full bg-slate-700 flex-shrink-0 overflow-hidden">
-                        <img src="https://ui-avatars.com/api/?name=Guest+User&background=064e3b&color=fff">
-                    </div>
-                    <div class="flex-1">
-                        <input type="text" placeholder="Share your green thought..." class="w-full bg-slate-900/50 border-none rounded-xl px-4 py-3 text-sm text-white focus:ring-2 focus:ring-emerald-500 transition outline-none placeholder-slate-500">
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="flex gap-4 text-emerald-500 text-lg">
-                                <i class="fas fa-image hover:text-white cursor-pointer"></i>
-                                <i class="fas fa-map-marker-alt hover:text-white cursor-pointer"></i>
-                            </div>
-                            <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-1.5 rounded-full text-xs font-bold transition">POST</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feed Content (Static Example) -->
-                <article class="glass-panel rounded-2xl p-0 mb-6 overflow-hidden glass-card group">
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full border border-emerald-500 p-0.5"><img src="images/logo.png" class="w-full h-full rounded-full object-cover"></div>
-                            <div>
-                                <h3 class="font-bold text-sm text-white">Luntian Official <i class="fas fa-check-circle text-blue-400 ml-1"></i></h3>
-                                <p class="text-[10px] text-slate-400">2 hours ago • <span class="text-emerald-400">Event</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-4 pb-3">
-                        <p class="text-sm text-slate-200 leading-relaxed mb-3"><span class="text-red-400 font-bold">🚨 CALL TO ACTION:</span> This Saturday is the big push! Join the <span class="text-emerald-400 font-bold">#LuntianWomen</span> and the Kids as we clear the road to 7170.</p>
-                    </div>
-                    <div class="relative h-64 w-full bg-slate-800 group overflow-hidden">
-                        <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1591193686104-fddba4d0e4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700">
-                    </div>
-                </article>
-            </div>
-        </main>
-    </div>
+<body>
+  Redirecting to <a href="/social">/social</a>. If you are not redirected, click the link.
 </body>
 </html>
