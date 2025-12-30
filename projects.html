@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Luntian Wonders</title>
+     <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="js/main.js" defer></script>
+    <script src="js/mini-player.js" defer></script>
+
+    <style>
+        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-20">
+
+    <div id="header-placeholder"></div>
+
+    <header class="bg-slate-900 text-white py-24 relative overflow-hidden">
+       <div class="absolute inset-0 opacity-30">
+            <img src="images/luntian.jpg" onerror="this.src='https://images.unsplash.com/photo-1503389152951-a0f20e3b3a4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-emerald-400 font-heading font-bold tracking-widest uppercase text-xs mb-4 block">Strategic Interventions 2025-2030</span>
+            <h1 class="font-heading font-black text-4xl md:text-6xl mb-6">Building the <span class="text-emerald-400">Green Economy</span></h1>
+            <p class="text-slate-300 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                Active infrastructure, restoration, and digital projects transforming Port Barton.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <!-- Project 1 -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="images/boardwalk.jpg" onerror="this.src='https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" alt="Boardwalk Concept" class="w-full">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="font-heading font-black text-3xl text-slate-800 mb-6">Waste-to-Wonder Boardwalk</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        We aren't just building a walkway; we are cleaning the ocean. This <strong>3km Mangrove Boardwalk</strong> is constructed using <strong>Eco-Lumber</strong> fabricated from plastic waste.
+                    </p>
+                    <a href="donate.html" class="inline-block border-2 border-[#064e3b] text-[#064e3b] font-heading font-bold py-3 px-8 rounded-full hover:bg-[#064e3b] hover:text-white transition">
+                        Sponsor a Plank
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
