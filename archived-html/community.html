@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Community | Luntian Wonders</title>
+    <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <link rel="shortcut icon" href="images/lwowhite.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
+    <meta name="theme-color" content="#064e3b">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="js/main.js" defer></script>
+    <script src="js/mini-player.js" defer></script>
+
+    <style>
+        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-20">
+
+    <div id="header-placeholder"></div>
+
+    <header class="bg-slate-900 text-white py-20 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-full object-cover grayscale mix-blend-multiply">
+        </div>
+        <div class="container mx-auto relative z-10 text-center">
+            <span class="bg-blue-500 text-white font-heading font-bold text-xs px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block shadow-md">The Guardians</span>
+            <h1 class="font-heading font-black text-4xl md:text-6xl mb-6">Our People</h1>
+            <p class="text-emerald-100 max-w-2xl mx-auto font-light text-lg">The Luntian Wonders Organization is a coalition of specialized units working in harmony.</p>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <!-- GROUP 1: LUNTIAN WOMEN -->
+        <section class="mb-24 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="images/women.jpg" onerror="this.src='https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-80 object-cover">
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="font-heading font-black text-3xl text-slate-800 mb-4">Luntian Women's Fisherfolks</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">The backbone of our livelihood programs. This cooperative manages the "Luntian Dahon" nurseries.</p>
+                <button onclick="showToast('Applications for this group are currently handled offline.', 'warning')" class="border-2 border-pink-500 text-pink-600 font-heading font-bold py-2 px-6 rounded-full hover:bg-pink-500 hover:text-white transition">Apply to Join</button>
+            </div>
+        </section>
+
+        <!-- GROUP 2: BROTHERHOOD -->
+        <section class="mb-24 flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="md:w-1/2 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="images/brotherhood.jpg" onerror="this.src='https://images.unsplash.com/photo-1552799446-159ba9523315?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-80 object-cover">
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="font-heading font-black text-3xl text-slate-800 mb-4">Brotherhood Unite Council</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">Our frontline enforcers acting as Marine Marshals and Bantay Dagat.</p>
+                <button onclick="showToast('Applications for this group are currently handled offline.', 'warning')" class="border-2 border-blue-500 text-blue-600 font-heading font-bold py-2 px-6 rounded-full hover:bg-blue-500 hover:text-white transition">Apply to Join</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
