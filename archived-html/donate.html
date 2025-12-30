@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Luntian Anchor Campaign</title>
+    <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <link rel="shortcut icon" href="images/lwowhite.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
+    <meta name="theme-color" content="#064e3b">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="js/main.js" defer></script>
+    <script src="js/mini-player.js" defer></script>
+
+    <style>
+        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-20">
+
+    <div id="header-placeholder"></div>
+
+    <div class="bg-slate-900 relative overflow-hidden">
+        <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="md:w-1/2 z-10">
+                <span class="text-yellow-400 font-heading font-bold tracking-widest uppercase text-sm mb-2 block">Project Phase 1</span>
+                <h1 class="text-4xl md:text-6xl text-white font-heading font-black leading-tight mb-6">
+                    Luntian Anchor: <br>
+                    <span class="text-emerald-400">Waste to Waves</span>
+                </h1>
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                    Did you know one anchor drop can break <strong>50 years</strong> of coral growth? We are building <strong>100 Sentinel Buoys</strong> from upcycled plastic to stop this destruction forever.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#tiers" class="bg-yellow-400 text-[#064e3b] font-heading font-bold py-4 px-8 rounded-full hover:bg-yellow-300 transition shadow-lg">
+                        Adopt a Buoy
+                    </a>
+                    <a href="/projects" class="border border-slate-500 text-slate-300 font-heading font-bold py-4 px-8 rounded-full hover:border-white hover:text-white transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 relative z-10">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/50 transform rotate-1 hover:rotate-0 transition duration-500">
+                    <img src="images/anchors_away.jpg" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'" alt="Luntian Sentinel Buoy" class="w-full h-auto object-cover">
+                    <div class="absolute bottom-0 left-0 bg-[#064e3b] text-white px-4 py-2 font-heading font-bold text-xs rounded-tr-lg">
+                        SENTINEL BUOY PROTOTYPE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="tiers" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-3xl text-slate-800">Choose Your Impact</h2>
+                <p class="text-slate-500 mt-2">All funds go directly to the Luntian Trust Fund.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-emerald-400 transition group relative bg-slate-50">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl mb-6 shadow-sm text-emerald-600"><i class="fas fa-wine-bottle"></i></div>
+                    <h3 class="font-heading font-bold text-xl text-slate-800">Bottle Collector</h3>
+                    <div class="text-3xl font-black text-slate-800 my-4">₱500</div>
+                    <p class="text-sm text-slate-600 mb-6">Helps us collect <strong>50 PET bottles</strong> for buoy flotation.</p>
+                    <button class="w-full bg-white border-2 border-slate-200 text-slate-700 font-bold py-3 rounded-xl group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 transition">Select</button>
+                </div>
+                <div class="border-2 border-yellow-400 rounded-2xl p-8 shadow-xl relative bg-white transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-[#064e3b] text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">Most Popular</div>
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-3xl mb-6 shadow-sm text-yellow-600"><i class="fas fa-tools"></i></div>
+                    <h3 class="font-heading font-bold text-xl text-slate-800">Hardware Hero</h3>
+                    <div class="text-3xl font-black text-slate-800 my-4">₱2,500</div>
+                    <p class="text-sm text-slate-600 mb-6">Buys the <strong>stainless steel shackles & chain</strong>.</p>
+                    <button class="w-full bg-yellow-400 text-[#064e3b] font-bold py-3 rounded-xl hover:bg-yellow-300 transition shadow-md">Select</button>
+                </div>
+                <div class="border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-blue-500 transition group bg-slate-50">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-3xl mb-6 shadow-sm text-blue-600"><i class="fas fa-anchor"></i></div>
+                    <h3 class="font-heading font-bold text-xl text-slate-800">Reef Guardian</h3>
+                    <div class="text-3xl font-black text-slate-800 my-4">₱10,000</div>
+                    <p class="text-sm text-slate-600 mb-6">Sponsor a <strong>Full Sentinel Buoy</strong>.</p>
+                    <button class="w-full bg-white border-2 border-slate-200 text-slate-700 font-bold py-3 rounded-xl group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition">Select</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
