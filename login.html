@@ -37,7 +37,7 @@
             
             <div class="flex justify-between items-center mb-8">
                 <h3 class="font-heading font-bold text-2xl text-slate-800" id="login-title">Member Login</h3>
-                <a href="index.html" class="text-xs text-slate-400 hover:text-emerald-600 font-bold"><i class="fas fa-arrow-left mr-1"></i> Back Home</a>
+                <a href="/" class="text-xs text-slate-400 hover:text-emerald-600 font-bold"><i class="fas fa-arrow-left mr-1"></i> Back Home</a>
             </div>
 
             <div class="flex justify-center mb-8">
@@ -118,7 +118,7 @@
             
             setTimeout(() => {
                 if(currentRole === 'officer') {
-                    window.location.href = 'admin.html';
+                    window.location.href = '/admin';
                 } else {
                     alert("Member dashboard coming soon!");
                     btn.innerHTML = '<span>Sign In</span> <i class="fas fa-sign-in-alt"></i>';
