@@ -29,10 +29,11 @@
         </div>
         
         <nav class="flex-grow p-4 space-y-2">
-            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-emerald-600 rounded-lg text-white font-bold text-sm shadow-lg">
+            <!-- use a button instead of an anchor to avoid accidental navigation -->
+            <button type="button" class="w-full text-left flex items-center gap-3 px-4 py-3 bg-emerald-600 rounded-lg text-white font-bold text-sm shadow-lg">
                 <!-- content omitted -->
-            </a>
-        </nav>
+            </button>
+         </nav>
 
         <div class="p-4 border-t border-slate-800">
             <a href="/login" class="flex items-center gap-2 text-red-400 text-xs font-bold hover:text-red-300">
@@ -81,7 +82,7 @@
     </main>
 
     <script>
-        // Simple admin-side volunteer management using localStorage
+        // Admin-side volunteer management (uses localStorage). Buttons are type="button" so no submits/redirects.
         document.addEventListener("DOMContentLoaded", function () {
             const VOLUNTEERS_KEY = 'lwt_volunteers';
             const legacyPendingKey = 'event-joined-001';
@@ -91,7 +92,6 @@
             const pendingCountEl = document.getElementById('pending-count');
 
             function loadVolunteers() {
-                // migrate legacy single-pending keys if present
                 let volunteers = JSON.parse(localStorage.getItem(VOLUNTEERS_KEY) || '[]');
                 const legacyStatus = localStorage.getItem(legacyPendingKey);
                 if (legacyStatus) {
@@ -116,8 +116,6 @@
             function render() {
                 const volunteers = loadVolunteers();
                 const pending = volunteers.filter(v => v.status === 'pending');
-
-                // clear rows
                 tableBody.innerHTML = '';
                 if (!pending.length) {
                     tableBody.innerHTML = '<tr id="no-pending" class="text-slate-500"><td colspan="4" class="px-6 py-4 text-sm">No pending volunteers.</td></tr>';
@@ -130,23 +128,20 @@
                             <td class="px-6 py-4 text-sm">${escapeHtml(v.eventId)}</td>
                             <td class="px-6 py-4 text-sm"><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Pending</span></td>
                             <td class="px-6 py-4 text-sm text-right">
-                                <button onclick="approveVolunteer('${v.id}')" class="bg-emerald-600 text-white px-3 py-1 rounded-md text-sm mr-2">Approve</button>
-                                <button onclick="denyVolunteer('${v.id}')" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">Deny</button>
+                                <button type="button" onclick="approveVolunteer('${v.id}')" class="bg-emerald-600 text-white px-3 py-1 rounded-md text-sm mr-2">Approve</button>
+                                <button type="button" onclick="denyVolunteer('${v.id}')" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">Deny</button>
                             </td>
                         `;
                         tableBody.appendChild(tr);
                     });
                 }
-
                 pendingCountEl.textContent = pending.length;
             }
 
-            // simple XSS-safe text escape
             function escapeHtml(str) {
                 return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[s]);
             }
 
-            // global functions used by inline onclick
             window.approveVolunteer = function (id) {
                 const volunteers = loadVolunteers();
                 const idx = volunteers.findIndex(v => v.id === id);
@@ -163,7 +158,7 @@
                 const idx = volunteers.findIndex(v => v.id === id);
                 if (idx === -1) return;
                 const name = volunteers[idx].name;
-                volunteers.splice(idx, 1); // remove denied
+                volunteers.splice(idx, 1);
                 saveVolunteers(volunteers);
                 render();
                 showToast(`${name} denied.`, 'red');
@@ -178,7 +173,6 @@
                 setTimeout(() => toast.remove(), 2600);
             }
 
-            // initial render
             render();
         });
     </script>
