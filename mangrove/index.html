@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Mangrove Labyrinth | Roots of Resilience</title>
+    <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <link rel="shortcut icon" href="images/lwowhite.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
+    <meta name="theme-color" content="#064e3b">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- MAIN SITE LOGIC -->
+    <script src="js/main.js" defer></script>
+    <script src="js/mini-player.js" defer></script>
+
+    <style>
+        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        .mangrove-pattern {
+            background-color: #064e3b;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23047857' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-20">
+
+    <div id="header-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <header class="mangrove-pattern text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-[#064e3b]/90"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block border border-emerald-400/50 bg-emerald-900/30 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+                <span class="text-emerald-300 text-xs font-heading font-bold tracking-widest uppercase">New Campaign</span>
+            </div>
+            <h1 class="font-heading font-black text-4xl md:text-7xl mb-6 leading-tight">
+                Roots of <span class="text-emerald-400">Resilience</span>
+            </h1>
+            <p class="text-emerald-100 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-10">
+                Help us build the <strong>Luntian Mangrove Labyrinth</strong>. A "Waste-to-Wonder" boardwalk and living nursery that protects our coast and empowers the community.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#individual" class="bg-yellow-400 text-[#064e3b] font-heading font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition shadow-lg">
+                    Plant a Seedling
+                </a>
+                <a href="#corporate" class="border-2 border-white text-white font-heading font-bold py-3 px-8 rounded-full hover:bg-white hover:text-[#064e3b] transition">
+                    Corporate Partners
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- INTRO -->
+        <section class="py-20 px-6 bg-white">
+            <div class="container mx-auto max-w-5xl text-center">
+                <h2 class="font-heading font-bold text-3xl text-slate-800 mb-6">More Than Just Trees</h2>
+                <p class="text-slate-600 leading-relaxed mb-12">
+                    The Mangrove Labyrinth isn't just a reforestation site. It is a <strong>Circular Economy Engine</strong>. 
+                </p>
+            </div>
+        </section>
+
+        <!-- INDIVIDUAL TIERS -->
+        <section id="individual" class="py-20 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs">For Individuals & Families</span>
+                    <h2 class="font-heading font-bold text-3xl text-slate-800">Become a Steward</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- content omitted -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
