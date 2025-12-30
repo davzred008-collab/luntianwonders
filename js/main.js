@@ -30,6 +30,7 @@ function loadHeader() {
                     <a href="index.html" class="nav-link text-emerald-100 hover:text-white transition py-1">HOME</a>
                     <a href="about.html" class="nav-link text-emerald-100 hover:text-white transition py-1">STORY</a>
                     <a href="activities.html" class="nav-link text-emerald-100 hover:text-white transition py-1">ACTIVITIES</a>
+                    <a href="community.html" class="nav-link text-emerald-100 hover:text-white transition py-1">COMMUNITY</a>
                     
                     <!-- PROJECTS DROPDOWN -->
                     <div class="relative group">
@@ -69,6 +70,7 @@ function loadHeader() {
                 <a href="index.html" class="block text-emerald-100 font-bold hover:text-white">HOME</a>
                 <a href="about.html" class="block text-emerald-100 font-bold hover:text-white">STORY</a>
                 <a href="activities.html" class="block text-emerald-100 font-bold hover:text-white">ACTIVITIES</a>
+                <a href="community.html" class="block text-emerald-100 font-bold hover:text-white">COMMUNITY</a>
                 <div class="pl-4 border-l-2 border-emerald-500/30 space-y-2">
                     <span class="text-[10px] text-emerald-400 uppercase tracking-widest">Projects</span>
                     <a href="projects.html" class="block text-emerald-100 font-bold hover:text-white">All Projects</a>
