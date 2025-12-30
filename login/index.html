@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Luntian Portal | Login</title>
+    <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <link rel="shortcut icon" href="images/lwowhite.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
+    <meta name="theme-color" content="#064e3b">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Merriweather', serif; background-color: #f0fdf4; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+
+    <div class="absolute top-0 left-0 w-full h-1/2 bg-[#064e3b] transform -skew-y-3 origin-top-left z-0"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-emerald-100 rounded-full opacity-50 blur-3xl z-0"></div>
+
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl flex flex-col md:flex-row overflow-hidden relative z-10">
+        
+        <div class="md:w-1/2 bg-slate-900 relative hidden md:block">
+            <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-white p-12 text-center">
+                <img src="images/logo.png" class="h-24 mb-6 drop-shadow-lg">
+                <h2 class="font-heading font-black text-3xl mb-4">Luntian Digital Hub</h2>
+                <p class="text-sm text-emerald-100 leading-relaxed">"From Beneficiaries to Owners."</p>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+            
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="font-heading font-bold text-2xl text-slate-800" id="login-title">Member Login</h3>
+                <a href="/" class="text-xs text-slate-400 hover:text-emerald-600 font-bold"><i class="fas fa-arrow-left mr-1"></i> Back Home</a>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <div class="relative bg-slate-100 rounded-full p-1 flex">
+                    <!-- content omitted -->
+                </div>
+            </div>
+
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="space-y-5">
+                    <!-- form omitted -->
+                </div>
+            </form>
+
+            <div class="mt-8 text-center text-xs text-slate-400">
+                Not a member yet? <a href="#" class="text-emerald-600 font-bold hover:underline">Apply for Membership</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'member';
+
+        function switchRole(role) {
+            currentRole = role;
+            const title = document.getElementById('login-title');
+            const badge = document.getElementById('officer-badge');
+            const btnMember = document.getElementById('btn-member');
+            const btnOfficer = document.getElementById('btn-officer');
+
+            if (role === 'officer') {
+                title.innerText = "Officer Command";
+                badge.classList.remove('hidden');
+                btnOfficer.classList.add('bg-white', 'text-emerald-800', 'shadow-sm');
+                btnOfficer.classList.remove('text-slate-500');
+                btnMember.classList.remove('bg-white', 'text-emerald-800', 'shadow-sm');
+                btnMember.classList.add('text-slate-500');
+            } else {
+                title.innerText = "Member Login";
+                badge.classList.add('hidden');
+                /* content omitted */
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+            
+            setTimeout(() => {
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
