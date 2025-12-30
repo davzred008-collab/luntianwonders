@@ -1,106 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Park Status | Luntian Wonders</title>
-    <link rel="icon" type="image/png" href="images/lwowhite.png">
-    <link rel="shortcut icon" href="images/lwowhite.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
-    <meta name="theme-color" content="#064e3b">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="js/main.js" defer></script>
-    <script src="js/mini-player.js" defer></script>
-
-    <style>
-        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
-        .font-heading { font-family: 'Montserrat', sans-serif; }
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=/status">
+  <link rel="canonical" href="/status">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
 </head>
-<body class="flex flex-col min-h-screen pt-20">
-
-    <div id="header-placeholder"></div>
-
-    <header class="bg-slate-900 text-white py-20 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-30">
-            <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80'" class="w-full h-full object-cover">
-        </div>
-        <div class="container mx-auto relative z-10 text-center">
-            <span class="bg-emerald-500 text-white font-heading font-bold text-xs px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block shadow-md">
-                Official Monitoring Report
-            </span>
-            <h1 class="font-heading font-black text-4xl md:text-6xl mb-6">Park Vital Signs</h1>
-            <p class="text-emerald-100 max-w-2xl mx-auto font-light text-lg leading-relaxed">
-                Transparency is our policy. We track the health of our reefs, the threats we face, and the progress of our restoration.
-            </p>
-        </div>
-    </header>
-
-    <main class="flex-grow container mx-auto px-6 py-16">
-        <!-- METRICS GRID -->
-        <div class="grid md:grid-cols-4 gap-6 mb-16">
-            <div class="bg-white p-6 rounded-xl border-l-4 border-red-500 shadow-sm">
-                <div class="text-xs text-slate-400 uppercase font-bold mb-2">Live Hard Coral Cover</div>
-                <div class="text-4xl font-black text-slate-800">33%</div> 
-                <p class="text-xs text-red-500 mt-2 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i> CRITICAL LEVEL</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border-l-4 border-orange-500 shadow-sm">
-                <div class="text-xs text-slate-400 uppercase font-bold mb-2">Marine Debris Composition</div>
-                <div class="text-4xl font-black text-slate-800">88%</div>
-                <p class="text-xs text-orange-500 mt-2 font-bold">PLASTICS</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border-l-4 border-emerald-500 shadow-sm">
-                <div class="text-xs text-slate-400 uppercase font-bold mb-2">Seagrass Biodiversity</div>
-                <div class="text-4xl font-black text-slate-800">10</div>
-                <p class="text-xs text-emerald-600 mt-2 font-bold">SPECIES IDENTIFIED</p>
-            </div>
-             <div class="bg-white p-6 rounded-xl border-l-4 border-blue-500 shadow-sm">
-                <div class="text-xs text-slate-400 uppercase font-bold mb-2">Guardian Force Status</div>
-                <div class="text-4xl font-black text-slate-800">Active</div>
-                <p class="text-xs text-blue-600 mt-2 font-bold">PHASE 1 DEPLOYMENT</p>
-            </div>
-        </div>
-
-        <!-- CHARTS SECTION -->
-        <div class="grid md:grid-cols-2 gap-12 mb-20">
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                <h3 class="font-heading font-bold text-xl text-slate-800 mb-6 border-b pb-4">Seagrass Species Distribution</h3>
-                <div class="relative h-64"><canvas id="seagrassChart"></canvas></div>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                <h3 class="font-heading font-bold text-xl text-slate-800 mb-6 border-b pb-4">Threat Analysis: Marine Debris</h3>
-                <div class="relative h-64 flex justify-center"><canvas id="wasteChart"></canvas></div>
-            </div>
-        </div>
-    </main>
-
-    <div id="footer-placeholder"></div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // CHARTS LOGIC
-            new Chart(document.getElementById('seagrassChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['C. rotundata', 'C. serrulata', 'E. acoroides', 'H. pinifolia', 'H. uninervis'],
-                    datasets: [{ label: 'Abundance', data: [65, 59, 80, 45, 30], backgroundColor: 'rgba(52, 211, 153, 0.8)', borderRadius: 4 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true }, x: { grid: { display: false } } } }
-            });
-
-            new Chart(document.getElementById('wasteChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Plastics', 'Glass', 'Metal', 'Rubber', 'Others'],
-                    datasets: [{ data: [88, 5, 3, 2, 2], backgroundColor: ['#ef4444', '#94a3b8', '#64748b', '#475569', '#334155'], borderWidth: 0 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
-            });
-        });
-    </script>
+<body>
+  Redirecting to <a href="/status">/status</a>. If you are not redirected, click the link.
 </body>
 </html>
