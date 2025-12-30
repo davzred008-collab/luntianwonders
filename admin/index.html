@@ -22,7 +22,7 @@
 
     <aside class="w-64 bg-slate-900 text-white flex flex-col fixed h-full z-20">
         <div class="p-6 flex items-center gap-3 border-b border-slate-800">
-            <img src="images/logo.png" onerror="this.src='https://placehold.co/40x40'" class="h-8 w-auto">
+            <img src="images/logo.png" alt="Luntian Wonders Logo" onerror="this.src='https://placehold.co/40x40'" class="h-8 w-auto">
             <div>
                 <!-- content omitted -->
             </div>
@@ -59,25 +59,128 @@
 
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
-                <!-- content omitted -->
+                <h3 class="font-heading font-bold">Volunteer Registrations</h3>
+                <div class="text-sm text-slate-500">Pending: <span id="pending-count" class="font-bold">0</span></div>
             </div>
             <table class="w-full text-left border-collapse">
-                <!-- content omitted -->
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-6 py-3 text-sm font-semibold">Name</th>
+                        <th class="px-6 py-3 text-sm font-semibold">Event</th>
+                        <th class="px-6 py-3 text-sm font-semibold">Status</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="volunteer-table">
+                    <tr id="no-pending" class="text-slate-500">
+                        <td colspan="4" class="px-6 py-4 text-sm">No pending volunteers.</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Check LocalStorage for the volunteer registered on the Activities page
-            const pendingStatus = localStorage.getItem('event-joined-001');
-            const volunteerName = localStorage.getItem('volunteer-name') || "Anonymous Volunteer";
-            
-            const tableBody = document.getElementById('volunteer-table');
-            
-        });
+        // Simple admin-side volunteer management using localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            const VOLUNTEERS_KEY = 'lwt_volunteers';
+            const legacyPendingKey = 'event-joined-001';
+            const legacyNameKey = 'volunteer-name';
 
-        function approveVolunteer(btn) {/* content omitted */}
+            const tableBody = document.getElementById('volunteer-table');
+            const pendingCountEl = document.getElementById('pending-count');
+
+            function loadVolunteers() {
+                // migrate legacy single-pending keys if present
+                let volunteers = JSON.parse(localStorage.getItem(VOLUNTEERS_KEY) || '[]');
+                const legacyStatus = localStorage.getItem(legacyPendingKey);
+                if (legacyStatus) {
+                    volunteers.push({
+                        id: Date.now().toString(),
+                        name: localStorage.getItem(legacyNameKey) || 'Anonymous Volunteer',
+                        eventId: legacyPendingKey,
+                        status: 'pending',
+                        createdAt: new Date().toISOString()
+                    });
+                    localStorage.removeItem(legacyPendingKey);
+                    localStorage.removeItem(legacyNameKey);
+                    localStorage.setItem(VOLUNTEERS_KEY, JSON.stringify(volunteers));
+                }
+                return volunteers;
+            }
+
+            function saveVolunteers(volunteers) {
+                localStorage.setItem(VOLUNTEERS_KEY, JSON.stringify(volunteers));
+            }
+
+            function render() {
+                const volunteers = loadVolunteers();
+                const pending = volunteers.filter(v => v.status === 'pending');
+
+                // clear rows
+                tableBody.innerHTML = '';
+                if (!pending.length) {
+                    tableBody.innerHTML = '<tr id="no-pending" class="text-slate-500"><td colspan="4" class="px-6 py-4 text-sm">No pending volunteers.</td></tr>';
+                } else {
+                    pending.forEach(v => {
+                        const tr = document.createElement('tr');
+                        tr.className = 'border-t';
+                        tr.innerHTML = `
+                            <td class="px-6 py-4 text-sm">${escapeHtml(v.name)}</td>
+                            <td class="px-6 py-4 text-sm">${escapeHtml(v.eventId)}</td>
+                            <td class="px-6 py-4 text-sm"><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Pending</span></td>
+                            <td class="px-6 py-4 text-sm text-right">
+                                <button onclick="approveVolunteer('${v.id}')" class="bg-emerald-600 text-white px-3 py-1 rounded-md text-sm mr-2">Approve</button>
+                                <button onclick="denyVolunteer('${v.id}')" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">Deny</button>
+                            </td>
+                        `;
+                        tableBody.appendChild(tr);
+                    });
+                }
+
+                pendingCountEl.textContent = pending.length;
+            }
+
+            // simple XSS-safe text escape
+            function escapeHtml(str) {
+                return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[s]);
+            }
+
+            // global functions used by inline onclick
+            window.approveVolunteer = function (id) {
+                const volunteers = loadVolunteers();
+                const idx = volunteers.findIndex(v => v.id === id);
+                if (idx === -1) return;
+                volunteers[idx].status = 'approved';
+                volunteers[idx].approvedAt = new Date().toISOString();
+                saveVolunteers(volunteers);
+                render();
+                showToast(`${volunteers[idx].name} approved.`);
+            };
+
+            window.denyVolunteer = function (id) {
+                let volunteers = loadVolunteers();
+                const idx = volunteers.findIndex(v => v.id === id);
+                if (idx === -1) return;
+                const name = volunteers[idx].name;
+                volunteers.splice(idx, 1); // remove denied
+                saveVolunteers(volunteers);
+                render();
+                showToast(`${name} denied.`, 'red');
+            };
+
+            function showToast(message, color = 'green') {
+                const toast = document.createElement('div');
+                toast.className = `fixed top-6 right-6 z-50 px-4 py-2 rounded shadow text-white ${color === 'green' ? 'bg-emerald-600' : 'bg-red-500'}`;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.classList.add('opacity-0'), 2200);
+                setTimeout(() => toast.remove(), 2600);
+            }
+
+            // initial render
+            render();
+        });
     </script>
 </body>
 </html>
