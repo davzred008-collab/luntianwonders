@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Luntian Social | The Green Network</title>
+    <link rel="icon" type="image/png" href="images/lwowhite.png">
+    <link rel="shortcut icon" href="images/lwowhite.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
+    <meta name="theme-color" content="#064e3b">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Load Mini Player Logic -->
+    <script src="js/mini-player.js" defer></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #020617; color: #e2e8f0; overflow-x: hidden; }
+        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-card { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(52, 211, 153, 0.1); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 0 20px rgba(52, 211, 153, 0.1); transform: translateY(-2px); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #059669; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-[url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2594&q=80')] bg-fixed bg-cover bg-center">
+    
+    <div class="fixed inset-0 bg-slate-950/80 z-0"></div>
+
+    <div class="relative z-10 flex h-screen overflow-hidden max-w-[1600px] mx-auto">
+        <!-- SIDEBAR -->
+        <aside class="w-20 lg:w-64 hidden md:flex flex-col py-6 px-4 glass-panel border-r border-white/5 z-20">
+            <div class="flex items-center gap-3 mb-10 pl-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.6)]">
+                    <img src="images/logo.png" onerror="this.src='https://placehold.co/40x40'" class="h-6 w-auto brightness-200">
+                </div>
+                <h1 class="hidden lg:block font-black text-xl tracking-wider text-white">LUNTIAN<span class="text-emerald-400">.NET</span></h1>
+            </div>
+
+            <nav class="space-y-2 flex-1">
+                <a href="/" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
+                    <!-- content omitted -->
+                </a>
+                <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <!-- content omitted -->
+                </a>
+                <a href="/activities" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
+                    <!-- content omitted -->
+                </a>
+                <a href="/music" class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:bg-emerald-500/10 hover:text-emerald-400 transition group">
+                    <!-- content omitted -->
+                </a>
+            </nav>
+        </aside>
+
+        <!-- FEED -->
+        <main class="flex-1 overflow-y-auto relative no-scrollbar">
+            <!-- Mobile Header -->
+            <div class="md:hidden glass-panel sticky top-0 z-50 px-4 py-3 flex justify-between items-center mb-4">
+                <img src="images/logo.png" class="h-8 w-auto">
+                <a href="/" class="text-emerald-400 font-bold">EXIT APP</a>
+            </div>
+
+            <div class="max-w-2xl mx-auto py-8 px-4 pb-32">
+                <!-- Create Post -->
+                <div class="glass-panel rounded-2xl p-4 mb-8 flex gap-4 items-start">
+                    <!-- content omitted -->
+                </div>
+
+                <!-- Feed Content (Static Example) -->
+                <article class="glass-panel rounded-2xl p-0 mb-6 overflow-hidden glass-card group">
+                    <!-- content omitted -->
+                </article>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
