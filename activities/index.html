@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="images/lwowhite.png">
     <link rel="shortcut icon" href="images/lwowhite.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
-    <meta name="theme-color" content="#064e3b">
+    <meta name="theme-color" content="#064e3b" media="(prefers-color-scheme: light)">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,7 +33,7 @@
     <!-- HERO -->
     <header class="bg-slate-900 text-white py-20 px-6 relative overflow-hidden">
         <div class="absolute inset-0 opacity-30">
-            <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1591193686104-fddba4d0e4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-full object-cover grayscale mix-blend-multiply">
+            <img src="images/hero-bg.jpg" alt="Hero background for community board" onerror="this.src='https://images.unsplash.com/photo-1591193686104-fddba4d0e4d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'" class="w-full h-full object-cover grayscale mix-blend-multiply">
         </div>
         <div class="container mx-auto relative z-10 text-center">
             <span class="bg-yellow-500 text-[#064e3b] font-heading font-bold text-xs px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block shadow-md">Luntian in Action</span>
@@ -63,7 +63,7 @@
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
             <div class="bg-[#064e3b] p-6 text-white relative">
                 <h3 class="font-heading font-bold text-xl relative z-10">Volunteer Registration</h3>
-                <button onclick="document.getElementById('volunteer-modal').classList.add('hidden')" class="absolute top-4 right-4 text-emerald-200 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+                <button type="button" title="Close volunteer registration modal" onclick="document.getElementById('volunteer-modal').classList.add('hidden')" class="absolute top-4 right-4 text-emerald-200 hover:text-white"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="p-8">
                 <form id="volunteer-form" onsubmit="submitVolunteer(event)">
