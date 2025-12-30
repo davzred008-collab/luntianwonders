@@ -25,9 +25,9 @@
     ];
 
     // --- PAGE DETECTION ---
-    // If on Vibe Page (music.html) or Social Page, stop here.
+    // If on Vibe Page (/music) or Social Page (/social), stop here.
     const path = window.location.pathname;
-    if (path.includes('music.html') || path.includes('social.html')) {
+    if (path.includes('/music') || path.includes('/social')) {
         return; 
     }
 
@@ -67,7 +67,7 @@
     playerContainer.id = 'luntian-mini-player';
     playerContainer.innerHTML = `
         <div id="luntian-player-card">
-            <a href="music.html" class="expand-link" title="Open Full Player"><i class="fas fa-expand-alt"></i></a>
+            <a href="/music" class="expand-link" title="Open Full Player"><i class="fas fa-expand-alt"></i></a>
             <div class="player-header">
                 <img src="${playlist[0].cover}" onerror="this.src='images/logo.png'" class="player-art-small" id="lp-art">
                 <div class="track-info">
