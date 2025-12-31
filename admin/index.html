@@ -3,178 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Officer Dashboard | Luntian Wonders</title>
-    <link rel="icon" type="image/png" href="images/lwowhite.png">
-    <link rel="shortcut icon" href="images/lwowhite.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/lwowhite.png">
-    <meta name="theme-color" content="#064e3b">
+    <title>Luntian Wonders | Port Barton Marine Park Management</title>
+    
+    <!-- FIX: Use main logo -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
+    <!-- MAIN SITE LOGIC (Header/Footer/Nav) -->
+    <script src="js/main.js" defer></script>
+    
     <style>
-        body { font-family: 'Merriweather', serif; background-color: #f1f5f9; color: #0f172a; }
-        h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Merriweather', serif; color: #0f172a; background-color: #f8fafc; }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-up { animation: fadeUp 0.8s ease-out forwards; }
     </style>
 </head>
-<body class="flex min-h-screen">
+<body class="flex flex-col min-h-screen pt-20"> 
 
-    <aside class="w-64 bg-slate-900 text-white flex flex-col fixed h-full z-20">
-        <div class="p-6 flex items-center gap-3 border-b border-slate-800">
-            <img src="images/logo.png" alt="Luntian Wonders Logo" onerror="this.src='https://placehold.co/40x40'" class="h-8 w-auto">
-            <div>
-                <!-- content omitted -->
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-slate-900 h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero-bg.jpg" onerror="this.src='https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80'" alt="Port Barton" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#064e3b]/90 via-[#064e3b]/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="inline-block border border-emerald-400/50 bg-emerald-900/30 backdrop-blur-sm rounded-full px-6 py-2 mb-8 animate-up" style="animation-delay: 0.1s;">
+                <span class="text-emerald-300 text-xs md:text-sm font-heading font-bold tracking-[0.2em] uppercase">The Last Frontier's Green Hope</span>
+            </div>
+            <h1 class="font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight drop-shadow-2xl animate-up" style="animation-delay: 0.3s;">
+                Ang Luntiang <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Pangarap</span>
+            </h1>
+            <p class="text-lg md:text-xl text-emerald-50 mb-12 font-light leading-relaxed max-w-3xl mx-auto animate-up" style="animation-delay: 0.5s;">
+                A community-led vision to reclaim our destiny. We are transforming <strong>Port Barton Marine Park</strong> into a model of <strong>Resilience, Justice, and Green Prosperity.</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 animate-up" style="animation-delay: 0.7s;">
+                <a href="donate.html" class="bg-yellow-400 text-[#064e3b] font-heading font-black py-4 px-10 rounded-full hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.5)] transform hover:scale-105">
+                    JOIN THE MISSION
+                </a>
+                <a href="status.html" class="border-2 border-emerald-400/50 text-white backdrop-blur-md font-heading font-bold py-4 px-10 rounded-full hover:bg-emerald-500/20 hover:border-emerald-400 transition">
+                    View Vital Signs
+                </a>
             </div>
         </div>
         
-        <nav class="flex-grow p-4 space-y-2">
-            <!-- use a button instead of an anchor to avoid accidental navigation -->
-            <button type="button" class="w-full text-left flex items-center gap-3 px-4 py-3 bg-emerald-600 rounded-lg text-white font-bold text-sm shadow-lg">
-                <!-- content omitted -->
-            </button>
-         </nav>
-
-        <div class="p-4 border-t border-slate-800">
-            <a href="/login" class="flex items-center gap-2 text-red-400 text-xs font-bold hover:text-red-300">
-                <!-- content omitted -->
-            </a>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-emerald-400 opacity-70">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
-    </aside>
+    </header>
 
-    <main class="flex-1 ml-64 p-8">
-        <header class="flex justify-between items-center mb-8">
-            <div>
-                <!-- content omitted -->
+    <main class="flex-grow">
+        <!-- IMPACT COUNTERS -->
+        <section class="py-16 bg-white relative -mt-20 z-20 px-4">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-red-500 text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-4"><i class="fas fa-heart-broken text-2xl"></i></div>
+                        <h3 class="text-5xl font-heading font-black text-slate-800 mb-2">33%</h3>
+                        <p class="font-heading font-bold text-slate-600 uppercase tracking-wide text-sm">Live Coral Cover</p>
+                        <p class="text-slate-500 text-xs mt-3 px-4">CRITICAL LEVEL. Anchors destroy 50 years of growth in seconds.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-yellow-400 text-center transform md:-translate-y-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full mb-4"><i class="fas fa-anchor text-2xl"></i></div>
+                        <h3 class="text-5xl font-heading font-black text-slate-800 mb-2">100</h3>
+                        <p class="font-heading font-bold text-slate-600 uppercase tracking-wide text-sm">Sentinel Buoys Needed</p>
+                        <a href="donate.html" class="inline-block mt-4 text-xs font-bold text-yellow-600 hover:underline">Sponsor a Buoy &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-emerald-500 text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full mb-4"><i class="fas fa-leaf text-2xl"></i></div>
+                        <h3 class="text-5xl font-heading font-black text-slate-800 mb-2">10+</h3>
+                        <p class="font-heading font-bold text-slate-600 uppercase tracking-wide text-sm">Seagrass Species</p>
+                        <p class="text-slate-500 text-xs mt-3 px-4">Identified and protected during our Nov 2025 assessment.</p>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-4">
-                <!-- content omitted -->
-            </div>
-        </header>
+        </section>
 
-        <div class="grid grid-cols-4 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <!-- content omitted -->
+        <!-- CTA SECTION -->
+        <section class="py-24 bg-white text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="font-heading font-black text-3xl md:text-5xl text-slate-900 mb-6">Luntian in Action</h2>
+                <p class="text-slate-600 mb-8 max-w-2xl mx-auto">Join the Luntian Women, Brotherhood Unite Council, and Luntian Kids as we clear the way up to the 7170. Let's keep our roads safe.</p>
+                <a href="activities.html" class="inline-flex items-center justify-center px-8 py-3 bg-slate-900 text-white font-heading font-bold rounded-full hover:bg-emerald-600 transition shadow-lg">
+                    See Full Activity Board
+                </a>
             </div>
-        </div>
-
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
-                <h3 class="font-heading font-bold">Volunteer Registrations</h3>
-                <div class="text-sm text-slate-500">Pending: <span id="pending-count" class="font-bold">0</span></div>
-            </div>
-            <table class="w-full text-left border-collapse">
-                <thead class="bg-slate-50">
-                    <tr>
-                        <th class="px-6 py-3 text-sm font-semibold">Name</th>
-                        <th class="px-6 py-3 text-sm font-semibold">Event</th>
-                        <th class="px-6 py-3 text-sm font-semibold">Status</th>
-                        <th class="px-6 py-3 text-sm font-semibold text-right">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="volunteer-table">
-                    <tr id="no-pending" class="text-slate-500">
-                        <td colspan="4" class="px-6 py-4 text-sm">No pending volunteers.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        </section>
     </main>
 
-    <script>
-        // Admin-side volunteer management (uses localStorage). Buttons are type="button" so no submits/redirects.
-        document.addEventListener("DOMContentLoaded", function () {
-            const VOLUNTEERS_KEY = 'lwt_volunteers';
-            const legacyPendingKey = 'event-joined-001';
-            const legacyNameKey = 'volunteer-name';
-
-            const tableBody = document.getElementById('volunteer-table');
-            const pendingCountEl = document.getElementById('pending-count');
-
-            function loadVolunteers() {
-                let volunteers = JSON.parse(localStorage.getItem(VOLUNTEERS_KEY) || '[]');
-                const legacyStatus = localStorage.getItem(legacyPendingKey);
-                if (legacyStatus) {
-                    volunteers.push({
-                        id: Date.now().toString(),
-                        name: localStorage.getItem(legacyNameKey) || 'Anonymous Volunteer',
-                        eventId: legacyPendingKey,
-                        status: 'pending',
-                        createdAt: new Date().toISOString()
-                    });
-                    localStorage.removeItem(legacyPendingKey);
-                    localStorage.removeItem(legacyNameKey);
-                    localStorage.setItem(VOLUNTEERS_KEY, JSON.stringify(volunteers));
-                }
-                return volunteers;
-            }
-
-            function saveVolunteers(volunteers) {
-                localStorage.setItem(VOLUNTEERS_KEY, JSON.stringify(volunteers));
-            }
-
-            function render() {
-                const volunteers = loadVolunteers();
-                const pending = volunteers.filter(v => v.status === 'pending');
-                tableBody.innerHTML = '';
-                if (!pending.length) {
-                    tableBody.innerHTML = '<tr id="no-pending" class="text-slate-500"><td colspan="4" class="px-6 py-4 text-sm">No pending volunteers.</td></tr>';
-                } else {
-                    pending.forEach(v => {
-                        const tr = document.createElement('tr');
-                        tr.className = 'border-t';
-                        tr.innerHTML = `
-                            <td class="px-6 py-4 text-sm">${escapeHtml(v.name)}</td>
-                            <td class="px-6 py-4 text-sm">${escapeHtml(v.eventId)}</td>
-                            <td class="px-6 py-4 text-sm"><span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Pending</span></td>
-                            <td class="px-6 py-4 text-sm text-right">
-                                <button type="button" onclick="approveVolunteer('${v.id}')" class="bg-emerald-600 text-white px-3 py-1 rounded-md text-sm mr-2">Approve</button>
-                                <button type="button" onclick="denyVolunteer('${v.id}')" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm">Deny</button>
-                            </td>
-                        `;
-                        tableBody.appendChild(tr);
-                    });
-                }
-                pendingCountEl.textContent = pending.length;
-            }
-
-            function escapeHtml(str) {
-                return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[s]);
-            }
-
-            window.approveVolunteer = function (id) {
-                const volunteers = loadVolunteers();
-                const idx = volunteers.findIndex(v => v.id === id);
-                if (idx === -1) return;
-                volunteers[idx].status = 'approved';
-                volunteers[idx].approvedAt = new Date().toISOString();
-                saveVolunteers(volunteers);
-                render();
-                showToast(`${volunteers[idx].name} approved.`);
-            };
-
-            window.denyVolunteer = function (id) {
-                let volunteers = loadVolunteers();
-                const idx = volunteers.findIndex(v => v.id === id);
-                if (idx === -1) return;
-                const name = volunteers[idx].name;
-                volunteers.splice(idx, 1);
-                saveVolunteers(volunteers);
-                render();
-                showToast(`${name} denied.`, 'red');
-            };
-
-            function showToast(message, color = 'green') {
-                const toast = document.createElement('div');
-                toast.className = `fixed top-6 right-6 z-50 px-4 py-2 rounded shadow text-white ${color === 'green' ? 'bg-emerald-600' : 'bg-red-500'}`;
-                toast.textContent = message;
-                document.body.appendChild(toast);
-                setTimeout(() => toast.classList.add('opacity-0'), 2200);
-                setTimeout(() => toast.remove(), 2600);
-            }
-
-            render();
-        });
-    </script>
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Music Player Logic -->
+    <script src="js/mini-player.js" defer></script>
 </body>
 </html>
