@@ -2,14 +2,13 @@ import { db } from './index';
 import { quests } from './schema';
 import * as dotenv from 'dotenv';
 
-// Load environment variables so we can connect to Neon
+// Load environment variables
 dotenv.config({ path: '.env.local' });
 
 const main = async () => {
   console.log('🌱 Seeding Luntian Database...');
 
   try {
-    // Insert Initial Quests
     await db.insert(quests).values([
       {
         title: 'The Plastic-Free Pledge',
@@ -48,12 +47,10 @@ const main = async () => {
         isActive: true,
       },
     ]);
-
     console.log('✅ Seeding Completed! Quests are live.');
   } catch (error) {
     console.error('❌ Seeding Failed:', error);
   }
-
   process.exit(0);
 };
 
