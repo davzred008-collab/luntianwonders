@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Or your preferred font
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { clsx } from "clsx"; // We installed this earlier
+import { clsx } from "clsx";
+import { ClerkProvider } from '@clerk/nextjs'; // <--- Import this
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* FIX: We apply bg-stone-50 and text-stone-900 here 
-        instead of inside globals.css 
-      */}
-      <body className={clsx(inter.className, "bg-stone-50 text-stone-900 antialiased")}>
-        {children}
-      </body>
-    </html>
+    // Wrap the entire app
+    <ClerkProvider>
+      <html lang="en">
+        <body className={clsx(inter.className, "bg-stone-50 text-stone-900 antialiased")}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
